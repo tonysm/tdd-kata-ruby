@@ -17,6 +17,16 @@ describe 'BowlingGame' do
     assert_score 20
   end
 
+  it 'scores a space' do
+    @bowling.roll 2
+    @bowling.roll 8
+    @bowling.roll 5
+
+    roll_times 17, 0
+
+    assert_score 20
+  end
+
   private
 
   def roll_times(times, pins)

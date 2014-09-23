@@ -36,6 +36,12 @@ describe 'BowlingGame' do
     assert_score 28
   end
 
+  it 'should score a perfect game' do
+    roll_times 12, 10
+
+    assert_score 300
+  end
+
   private
 
   def roll_strike

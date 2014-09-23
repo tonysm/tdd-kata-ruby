@@ -1,9 +1,13 @@
 class BowlingGame
+  def initialize
+    @pins = []
+  end
+
   def roll(pins)
-    # code here
+    @pins.push(pins)
   end
 
   def score
-    0
+    @pins.reduce(:+)
   end
 end

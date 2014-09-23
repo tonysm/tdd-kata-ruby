@@ -12,6 +12,11 @@ describe 'BowlingGame' do
     assert_score 0
   end
 
+  it 'score the sum of all pins for a simple game' do
+    roll_times 20, 1
+    assert_score 20
+  end
+
   private
 
   def roll_times(times, pins)

@@ -27,7 +27,7 @@ describe 'BowlingGame' do
   end
 
   it 'scores a strike' do
-    @bowling.roll 10
+    roll_strike
     @bowling.roll 7
     @bowling.roll 2
 
@@ -37,6 +37,10 @@ describe 'BowlingGame' do
   end
 
   private
+
+  def roll_strike
+    @bowling.roll 10
+  end
 
   def roll_spare
     @bowling.roll 2
@@ -52,4 +56,5 @@ describe 'BowlingGame' do
   def assert_score(expected)
     expect(@bowling.score()).to eq(expected)
   end
+
 end

@@ -13,7 +13,10 @@ class BowlingGame
     roll = 0
 
     for frame in 1..frames do
-      if is_spare(roll)
+      if @pins.at(roll) == 10
+        score += 10 + @pins[roll + 1] + @pins[roll + 2]
+        roll += 1
+      elsif is_spare(roll)
         score += 10 + get_spare_bonus(roll)
         roll += 2
       else

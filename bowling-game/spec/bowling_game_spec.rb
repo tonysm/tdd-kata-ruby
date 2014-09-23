@@ -26,6 +26,16 @@ describe 'BowlingGame' do
     assert_score 20
   end
 
+  it 'scores a strike' do
+    @bowling.roll 10
+    @bowling.roll 7
+    @bowling.roll 2
+
+    roll_times 17, 0
+
+    assert_score 28
+  end
+
   private
 
   def roll_spare

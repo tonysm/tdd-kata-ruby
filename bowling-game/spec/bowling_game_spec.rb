@@ -17,9 +17,8 @@ describe 'BowlingGame' do
     assert_score 20
   end
 
-  it 'scores a space' do
-    @bowling.roll 2
-    @bowling.roll 8
+  it 'scores a spare' do
+    roll_spare
     @bowling.roll 5
 
     roll_times 17, 0
@@ -28,6 +27,11 @@ describe 'BowlingGame' do
   end
 
   private
+
+  def roll_spare
+    @bowling.roll 2
+    @bowling.roll 8
+  end
 
   def roll_times(times, pins)
     for i in 1..times
